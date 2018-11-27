@@ -1,0 +1,52 @@
+﻿Protocol notes:
+//Client -> Server: Subscribe
+{
+	"msg": "subscribe",
+	"nonce": "124564058643",
+	"view": "map/index",
+	"filters": []
+}
+
+//server -> client: Subscription Accepted.
+{
+	"msg": "subscription_accepted",
+	"nonce": "124564058643",
+	"id": "3705af9f-8a03-418f-baad-7825f077d33f"
+}
+
+//server -> client: Error
+{
+	"msg": "error",
+	"nonce": "124564058643",
+	"text": "Maximum concurrent subscriptions reached"
+}
+
+//client -> server: unsubscribe
+{
+	"msg": "unsubscribe",
+	"nonce": "124564058643",
+	"id": "3705af9f-8a03-418f-baad-7825f077d33f"
+}
+
+
+//server -> client: Unsubscribed
+{
+	"msg": "unsubscribed",
+	"nonce": "124564058643",
+}
+
+
+//server -> client: update
+{
+	"msg": "update",
+	"subscriptionId": "3705af9f-8a03-418f-baad-7825f077d33f",
+	"modelPrimaryKey": "3450",
+	"model": {
+		"no": "3450",
+		"lat": 55.6499604,
+		"lon": 12.5063198,
+		"timestamp": "2018-11-26 06:31:45:123",
+		"speed": 45.6,
+		"direction": 145.0,
+	}
+}
